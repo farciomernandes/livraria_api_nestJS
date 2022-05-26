@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  database:
+    container_name: alura_database_container
+    restart: always
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - .:/usr/lib/mysql
+
+volumes:
+  pgdata:
+    driver: local
